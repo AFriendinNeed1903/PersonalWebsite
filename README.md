@@ -1,2 +1,2 @@
 # PersonalWebsite
-This is my website! There are many like it, but this one is MINE
+Howdy! Welcome to my website.
