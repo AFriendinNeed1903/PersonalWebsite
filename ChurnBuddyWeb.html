@@ -1,99 +1,176 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ChurnBuddy Test</title>
+  <title>Churnbuddy Web</title>
+  <!-- Include Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 40px 20px;
+        background-color: #1e1e1e;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
 
     h1, h2, h3 {
-        color: #333;
+        color: #e0e0e0;
+        margin-bottom: 20px;
     }
 
-    label {
-        display: inline-block;
-        width: 200px;
-        margin-bottom: 5px;
+    h1 {
+        text-align: center;
     }
 
-    input {
+    .form-section {
+        margin-bottom: 40px;
+    }
+
+    form label {
+        display: block;
+        font-weight: bold;
         margin-bottom: 5px;
+        color: #e0e0e0;
+    }
+
+    form input[type="number"],
+    form input[type="text"] {
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        border: 1px solid #333333;
+        background-color: #2c2c2c;
+        color: #e0e0e0;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+        transition: border-color 0.3s;
+    }
+
+    form input[type="number"]:focus,
+    form input[type="text"]:focus {
+        border-color: #00ace6;
+        outline: none;
     }
 
     button {
-        margin-top: 10px;
+        display: inline-block;
+        padding: 12px 20px;
+        background-color: #00ace6;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
     }
 
-    form {
-        margin-bottom: 20px;
+    button:hover {
+        background-color: #008bb5;
     }
 
     #card-list, #sorted-card-list {
         list-style-type: none;
         padding: 0;
+        margin: 0;
     }
 
     #card-list li, #sorted-card-list li {
-        background-color: #f9f9f9;
-        margin-bottom: 5px;
-        padding: 5px;
-        border: 1px solid #ddd;
+        background-color: #2c2c2c;
+        margin-bottom: 10px;
+        padding: 15px;
+        border: 1px solid #333333;
+        border-radius: 4px;
+        font-size: 16px;
+        color: #e0e0e0;
+    }
+
+    #calculate-button {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    @media (max-width: 600px) {
+        .container {
+            width: 95%;
+            padding: 20px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 10px;
+        }
     }
   </style>
 </head>
 <body>
 
-  <h1>Credit Card Profitability Calculator</h1>
+  <div class="container">
+    <h1>Credit Card Profitability Calculator - Churnbuddy!</h1>
 
-  <h2>Enter Your Monthly Spending</h2>
-  <form id="spending-form">
-    <label for="dining-spending">Dining Spending: </label>
-    <input type="number" id="dining-spending" min="0" step="0.01"><br>
+    <div class="form-section">
+      <h2>Enter Your Monthly Spending</h2>
+      <form id="spending-form">
+        <label for="dining-spending">Dining Spending:</label>
+        <input type="number" id="dining-spending" min="0" step="0.01" placeholder="e.g., 200">
 
-    <label for="grocery-spending">Grocery Spending: </label>
-    <input type="number" id="grocery-spending" min="0" step="0.01"><br>
+        <label for="grocery-spending">Grocery Spending:</label>
+        <input type="number" id="grocery-spending" min="0" step="0.01" placeholder="e.g., 300">
 
-    <label for="transportation-spending">Transportation Spending: </label>
-    <input type="number" id="transportation-spending" min="0" step="0.01"><br>
+        <label for="transportation-spending">Transportation Spending:</label>
+        <input type="number" id="transportation-spending" min="0" step="0.01" placeholder="e.g., 100">
 
-    <label for="misc-spending">Miscellaneous Spending: </label>
-    <input type="number" id="misc-spending" min="0" step="0.01"><br>
-  </form>
+        <label for="misc-spending">Miscellaneous Spending:</label>
+        <input type="number" id="misc-spending" min="0" step="0.01" placeholder="e.g., 50">
+      </form>
+    </div>
 
-  <h2>Add Credit Cards</h2>
-  <form id="card-form">
-    <label for="card-name">Card Name: </label>
-    <input type="text" id="card-name"><br>
+    <div class="form-section">
+      <h2>Add Credit Cards</h2>
+      <form id="card-form">
+        <label for="card-name">Card Name:</label>
+        <input type="text" id="card-name" placeholder="e.g., Platinum Rewards">
 
-    <label for="rewards-dining">Rewards Rate for Dining (%): </label>
-    <input type="number" id="rewards-dining" min="0" step="0.01"><br>
+        <label for="rewards-dining">Rewards Rate for Dining (%):</label>
+        <input type="number" id="rewards-dining" min="0" step="0.01" placeholder="e.g., 2.5">
 
-    <label for="rewards-grocery">Rewards Rate for Groceries (%): </label>
-    <input type="number" id="rewards-grocery" min="0" step="0.01"><br>
+        <label for="rewards-grocery">Rewards Rate for Groceries (%):</label>
+        <input type="number" id="rewards-grocery" min="0" step="0.01" placeholder="e.g., 1.5">
 
-    <label for="rewards-transportation">Rewards Rate for Transportation (%): </label>
-    <input type="number" id="rewards-transportation" min="0" step="0.01"><br>
+        <label for="rewards-transportation">Rewards Rate for Transportation (%):</label>
+        <input type="number" id="rewards-transportation" min="0" step="0.01" placeholder="e.g., 1.2">
 
-    <label for="rewards-misc">Rewards Rate for Miscellaneous (%): </label>
-    <input type="number" id="rewards-misc" min="0" step="0.01"><br>
+        <label for="rewards-misc">Rewards Rate for Miscellaneous (%):</label>
+        <input type="number" id="rewards-misc" min="0" step="0.01" placeholder="e.g., 1">
 
-    <label for="monthly-fee">Monthly Fee: </label>
-    <input type="number" id="monthly-fee" min="0" step="0.01"><br>
+        <label for="monthly-fee">Monthly Fee:</label>
+        <input type="number" id="monthly-fee" min="0" step="0.01" placeholder="e.g., 5">
 
-    <button type="button" id="add-card-button">Add Credit Card</button>
-  </form>
+        <button type="button" id="add-card-button">Add Credit Card</button>
+      </form>
+    </div>
 
-  <h3>Credit Cards Added:</h3>
-  <ul id="card-list">
-  </ul>
+    <h3>Credit Cards Added:</h3>
+    <ul id="card-list">
+    </ul>
 
-  <button type="button" id="calculate-button">Calculate Profitability</button>
+    <button type="button" id="calculate-button">Calculate Profitability</button>
 
-  <h2>Sorted Credit Cards Based on Profitability:</h2>
-  <ul id="sorted-card-list">
-  </ul>
+    <h2>Sorted Credit Cards Based on Profitability:</h2>
+    <ul id="sorted-card-list">
+    </ul>
+  </div>
 
   <script>
     class CreditCard {
@@ -122,7 +199,7 @@
     document.getElementById('add-card-button').addEventListener('click', addCard);
 
     function addCard() {
-        const cardName = document.getElementById('card-name').value;
+        const cardName = document.getElementById('card-name').value.trim();
         const rewardsDining = parseFloat(document.getElementById('rewards-dining').value) || 0;
         const rewardsGrocery = parseFloat(document.getElementById('rewards-grocery').value) || 0;
         const rewardsTransportation = parseFloat(document.getElementById('rewards-transportation').value) || 0;
@@ -147,7 +224,7 @@
         const cardList = document.getElementById('card-list');
         cardList.innerHTML = '';
 
-        cards.forEach((card, index) => {
+        cards.forEach((card) => {
             const li = document.createElement('li');
             li.textContent = `${card.name}`;
             cardList.appendChild(li);
@@ -162,18 +239,23 @@
         const monthlySpendingTransportation = parseFloat(document.getElementById('transportation-spending').value) || 0;
         const monthlySpendingMisc = parseFloat(document.getElementById('misc-spending').value) || 0;
 
+        if (cards.length === 0) {
+            alert("Please add at least one credit card.");
+            return;
+        }
+
         insertionSort(cards, monthlySpendingDining, monthlySpendingGrocery, monthlySpendingTransportation, monthlySpendingMisc);
 
         updateSortedCardList(monthlySpendingDining, monthlySpendingGrocery, monthlySpendingTransportation, monthlySpendingMisc);
     }
 
-    function insertionSort(cards, monthlySpendingDining, monthlySpendingGrocery, monthlySpendingTransportation, monthlySpendingMisc) {
+    function insertionSort(cards, dining, grocery, transportation, misc) {
         for (let i = 1; i < cards.length; i++) {
             let currentCard = cards[i];
-            let currentProfit = currentCard.calculateProfitability(monthlySpendingDining, monthlySpendingGrocery, monthlySpendingTransportation, monthlySpendingMisc);
+            let currentProfit = currentCard.calculateProfitability(dining, grocery, transportation, misc);
 
             let j = i - 1;
-            while (j >= 0 && cards[j].calculateProfitability(monthlySpendingDining, monthlySpendingGrocery, monthlySpendingTransportation, monthlySpendingMisc) < currentProfit) {
+            while (j >= 0 && cards[j].calculateProfitability(dining, grocery, transportation, misc) < currentProfit) {
                 cards[j + 1] = cards[j];
                 j -= 1;
             }
@@ -182,12 +264,12 @@
         }
     }
 
-    function updateSortedCardList(monthlySpendingDining, monthlySpendingGrocery, monthlySpendingTransportation, monthlySpendingMisc) {
+    function updateSortedCardList(dining, grocery, transportation, misc) {
         const sortedCardList = document.getElementById('sorted-card-list');
         sortedCardList.innerHTML = '';
 
         cards.forEach(card => {
-            const profit = card.calculateProfitability(monthlySpendingDining, monthlySpendingGrocery, monthlySpendingTransportation, monthlySpendingMisc);
+            const profit = card.calculateProfitability(dining, grocery, transportation, misc);
             const li = document.createElement('li');
             li.textContent = `${card.name}: $${profit.toFixed(2)}`;
             sortedCardList.appendChild(li);
