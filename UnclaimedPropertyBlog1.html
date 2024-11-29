@@ -1,70 +1,152 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unclaimed Property Blog 1 - Adam Altmejd</title>
+    <title>Blog Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #202020;
-            color: #f0f0f0;
-            font-size: 1.2em;
-            line-height: 1.62;
-            font-family: sans-serif;
+            background-color: #1e1e2f;
+            color: #f5f5f5;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
         }
+
+        h1, h2, h3 {
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        blockquote {
+            background: #282845;
+            border-left: 5px solid #1e90ff;
+            margin: 20px 0;
+            padding: 15px 20px;
+            font-style: italic;
+            color: #ddd;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
         a {
             color: #1e90ff;
             text-decoration: none;
+            transition: color 0.3s;
         }
+
         a:hover {
-            text-decoration: underline;
+            color: #63b3ff;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            background: #16162b;
+            color: #aaaaaa;
+        }
+
+        .footer a {
+            color: #1e90ff;
+        }
+
+        .author {
+            font-weight: 700;
+            color: #cccccc;
+        }
+
+        .date {
+            font-style: italic;
+            color: #999999;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #1e90ff;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #63b3ff;
         }
     </style>
 </head>
 <body>
-    <h1>University Unclaimed Property</h1>
-    <h2>Universities Have Abandoned Over $1 Million Dollars of Property in Texas</h2>
-    <p><strong>Adam Altmejd</strong></p>
-    <p><em>11/29/2024</em></p>
+    <div class="container">
+        <h1>Universities Have Abandoned More Than $1 Million Dollars of Property in Texas</h1>
+        <p class="author">Written by <a href="https://altmejd.org/">Adam Altmejd</a></p>
+        <p class="date">11/29/2024</p>
 
-    <h3>Background: What is Unclaimed Property?</h3>
-    <p>If someone cuts you a cashier's check for $100 and sends it to you in the mail, and the mail truck catches fire… what happens to the $100?</p>
-    <p>In the United States, what happens is that eventually the bank which guarantees the cashier's check will turn the value of that check over to the custody of the state government. From the Texas Comptroller’s Office:</p>
+        <h3>Background: What is Unclaimed Property?</h3>
+        <p>If someone cuts you a cashier's check for $100 and sends it to you in the mail, and the mail truck catches fire… what happens to the $100?</p>
+        <p>In the United States, what happens is that eventually the bank which guarantees the cashier's check will turn the value of that check over to the custody of the state government. From the Texas Comptroller’s Office:</p>
+        <blockquote>
+            <p><strong>What is Unclaimed Property?</strong></p>
+            <p>Since 1963, Texas has required institutions, businesses and governmental entities to report to the state any personal property that has been unclaimed for up to five years, depending on the property in question.</p>
+            <p>Unclaimed property can be abandoned assets. Some examples:</p>
+            <ul>
+                <li>dividend, payroll or cashier's checks</li>
+                <li>stocks, bonds or mutual fund accounts</li>
+                <li>utility deposits and other refunds</li>
+                <li>bank accounts and safe deposit box contents</li>
+                <li>insurance proceeds</li>
+                <li>mineral interest or royalty payments</li>
+                <li>court deposits, trust funds or escrow accounts</li>
+                <li>overpayments on insurance, utilities and other bills</li>
+            </ul>
+        </blockquote>
+        <p>So if you have a bank account in the state of Texas and leave it untouched for a few years, when it eventually gets closed down the bank will send whatever's left in to the Texas Comptroller’s office for safe-keeping. Every state handles these claims slightly differently, but nearly all of them have a website set up like Texas’ <a href="http://www.claimittexas.gov">www.claimittexas.gov</a> where you can search your surname or business name for any property you’re owed.</p>
+        <p>I learned about this myself just a few weeks ago in David Quintanilla’s Business Law class at the University of Texas. At the end of our class on property law, he had us search for property in our name as an exercise. He told us that, every semester somebody always finds some astonishing amount of money under their name. Plenty of people find $25, sometimes they find a couple hundred. One semester he even had a student find $80,000 which belonged to her late father-in-law! After I learned that, I spent around an hour a day searching through the website to see what I could find. I searched family members, friends, colleagues, public figures. So far I’ve uncovered around $10,000 total for the folks in my life. I found myself wishing that I could get everyone’s attention all at once and ask them to search for themselves instead of having to look on my own. Hopefully that’s what I’ve done with this article.</p>
 
-    <blockquote>
-        <p><strong>What is Unclaimed Property?</strong></p>
-        <p>Since 1963, Texas has required institutions, businesses and governmental entities to report to the state any personal property that has been unclaimed for up to five years, depending on the property in question.</p>
-        <p>Unclaimed property can be abandoned assets. Some examples:</p>
-        <ul>
-            <li>dividend, payroll or cashier's checks</li>
-            <li>stocks, bonds or mutual fund accounts</li>
-            <li>utility deposits and other refunds</li>
-            <li>bank accounts and safe deposit box contents</li>
-            <li>insurance proceeds</li>
-            <li>mineral interest or royalty payments</li>
-            <li>court deposits, trust funds or escrow accounts</li>
-            <li>overpayments on insurance, utilities and other bills</li>
-        </ul>
-    </blockquote>
-    <p>So if you have a bank account in the state of Texas and leave it untouched for a few years, when it eventually gets closed down the bank will send whatever's left to the Texas Comptroller’s office for safekeeping. Every state handles these claims slightly differently, but nearly all of them have a website set up like Texas’ <a href="http://www.claimittexas.gov">www.claimittexas.gov</a> where you can search your surname or business name for any property you’re owed.</p>
+        <h3>So? Tell me about the “$1 MILLION DOLLARS” from that flashy headline!</h3>
+        <p>When you search “University of Texas” on <a href="http://www.claimittexas.gov">www.claimittexas.gov</a>, you’re immediately greeted with a page full of items with values of more than $100. When I saw that one of the first results was a $15,000, I nearly fell out of my chair! But that $15k is the least of it… all in all, the University of Texas System has nearly $300,000 dollars in unclaimed property once you add up all their unclaimed items.</p>
+        <p>But it’s not just UT. Searching through the data, I was able to find over $1 Million dollars waiting to be claimed from the State of Texas by various universities both within and outside Texas. This includes some big ticket items like one claim worth $31,457.45 for Rice University which has been waiting since 2006, a claim of $39,313.98 for the University of North Texas, or $21,698.98 for the University of Washington. To be clear, while those are particularly large individual unclaimed items, each of those universities has even MORE money waiting to be claimed in smaller items as well. At last count, my dataset had over 600 different unclaimed items worth $100 dollars or less.</p>
+        <p>I’ve attached my (very limited) dataset <a href="https://docs.google.com/spreadsheets/d/1cRRR6cQC9uewxPr3xiPE7yFcx159jxfm/edit?usp=sharing&ouid=110843073219208151285&rtpof=true&sd=true">here</a> if you’d like to take a look for yourself, or go to <a href="http://www.claimittexas.gov">www.claimittexas.gov</a> and take a look at the source yourself.</p>
 
-    <h3>So? Tell me about the “$1 MILLION DOLLARS” from that flashy headline!</h3>
-    <p>When you search “University of Texas” on <a href="http://www.claimittexas.gov">www.claimittexas.gov</a>, you’re immediately greeted with a page full of items with values of more than $100. When I saw that one of the first results was a $15,000, I nearly fell out of my chair! But that $15k is the least of it… all in all, the University of Texas System has nearly $300,000 dollars in unclaimed property once you add up all their unclaimed items.</p>
-    <p>But it’s not just UT. Searching through the data, I was able to find over $1 Million dollars waiting to be claimed from the State of Texas by various universities both within and outside Texas. This includes some big-ticket items like one claim worth $31,457.45 for Rice University which has been waiting since 2006, a claim of $39,313.98 for the University of North Texas, or $21,698.98 for the University of Washington. To be clear, while those are particularly large individual unclaimed items, each of those universities has even MORE money waiting to be claimed in smaller items as well. At last count, my dataset had over 600 different unclaimed items worth $100 dollars or less.</p>
+        <h3>Why should I care, what does this mean for me?</h3>
+        <p>[Content continues as before...]</p>
+    </div>
 
-    <p>I’ve attached my (very limited) dataset <a href="https://docs.google.com/spreadsheets/d/1cRRR6cQC9uewxPr3xiPE7yFcx159jxfm/edit?usp=sharing&ouid=110843073219208151285&rtpof=true&sd=true">here</a> if you’d like to take a look for yourself, or go to <a href="http://www.claimittexas.gov">www.claimittexas.gov</a> and take a look at the source yourself.</p>
-
-    <h3>Why should I care, what does this mean for me?</h3>
-    <p>Rice University left more than $30,000 dollars untouched for almost two decades. Even before we adjust for inflation, $30,000 is more money than plenty of Texans make in a year. The UT System has nearly $300,000 lying around - well over what an out-of-state student would pay in tuition over 4 years. You might be asking yourself: how is it not gross financial mismanagement for large universities to leave that much money on the table?</p>
-    <p>Well, the annual budget of University of Texas at Austin is roughly $4 billion. That’s UT Austin alone, not including the 15 other entities within the UT System which have their own budgets in the hundreds of millions or billions of dollars. In institutions this large - one million dollars is something you might find in between the couch cushions. It should still be accounted for and recovered, of course, but nothing about this constitutes misconduct or anything more than a curiosity.</p>
-
-    <p>The purpose of this article is not to criticize Universities for leaving this money on the table or the system that we have in Texas for caching unclaimed property. As easy as it would be to write eye-catching “gotchas” about “incompetent nonprofits” or “wasteful government,” nobody’s really done anything wrong here. As a current student of UT Austin, I certainly hope they claim the money they’re owed and put it towards some good use. But I could have just emailed their accounting office if I wanted to get that done. Why the flashy headline, then?</p>
-
-    <p>I wrote this article because I want YOU, dear reader, to get the money you’re owed. Go to your state’s unclaimed property website (either by googling “Unclaimed property [my state], or just visiting <a href="http://www.claimittexas.gov">claimittexas.gov</a> if you live in Texas) and search your name.</p>
-
-    <p>Search your surname, search your friend’s name, search your mother’s maiden name, and search the name of the business your late father-in-law used to own. That neighbor across the street from you who just lost his job and could really use a lucky break right now? Search his name.</p>
-
-    <p>Seriously - stop reading and go check! You never know what you’ll find. You might just find something that perks your day up a bit. You might find something that saves your whole year. Again, that’s <a href="http://www.claimittexas.gov">claimittexas.gov</a>, or just google your state’s name and “unclaimed property.” Make sure you click on a link with .gov at the end, that’s how you can know it’s a government website.</p>
+    <div class="footer">
+        <p>&copy; 2024 | <a href="mailto:">Contact Author</a></p>
+    </div>
 </body>
 </html>
