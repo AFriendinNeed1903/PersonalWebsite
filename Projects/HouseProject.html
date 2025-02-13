@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Roommate Rent Calculator</title>
+<style>
+    body { font-family: sans-serif; margin: 20px; }
+    .question-section { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; display: none; }
+    .question-section.active { display: block; }
+    label { display: block; margin-bottom: 5px; }
+    input[type="number"] { padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 80px; }
+    button { padding: 10px 15px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background-color: #3e8e41; }
+    #final-page { display: none; }
+    .room-info { margin-top: 10px; padding: 10px; border: 1px solid #eee; border-radius: 4px; }
+    .formula-display { margin-top: 20px; font-family: monospace; white-space: pre-wrap; }
+    .next-button-container{ display: flex; justify-content: center; align-items: center; width: 100%;}
+</style>
+</head>
+<body>
+
+<h1>Roommate Rent Calculator</h1>
+
+<div id="question1" class="question-section active">
+    <h2>Scenario 1: The Offer</h2>
+    <p>Congrats! You’ve just inherited a luxurious Condo in Downtown Austin from your estranged great uncle-in-law Reginald Von Champmathieu. The condo takes up the entire north half of the 37th floor of Austin’s tallest building. One small problem: though everything else about the condo is absolutely perfect, there is no bathroom inside it! Not only that, but there isn’t even a bathroom on the ground floor of the building. The nearest bathroom that you have access to (for some reason, none of the restaurants nearby have public restrooms)  is at the nearby Planet Fitness. Not just normal restrooms either: they have showers and lockers there too. That Planet Fitness is a 25 minute walk/5 minute bike ride away, and you’re already a member. </p>
+    <p>Still, you wish you had a bathroom you didn’t have to bike to get to. Just as you’re thinking this to yourself, you hear a knock on your door. Your friendly new neighbor, a nice middle aged widow named Dorothy Pontmercy is standing there with fresh-baked cookies. She owns the entire southern half of floor 37. After hearing you explain your trouble, she makes an offer.</p>
+    <p>“Yes, there’s only one bathroom on floor 37, and it's in the front hallway of my Unit. Old Reggie kept me company after my husband died so I always let him hold a spare key and use the restroom whenever he pleased. You and I won’t have that kind of relationship, but we could come to a financial understanding. You could pay me for a spare key, and the right to share that restroom and shower with me. Believe me, you’d have exactly half the rights to it - no more and no less.”</p>
+    <p>It’s an unorthodox solution, But maybe she has a point.</p>
+    <label for="answer1">Q1: How much are you willing to pay her per month to get that spare key and share her bathroom?</label>
+    <input type="number" id="answer1" name="answer1">
+    <div class = "next-button-container"><button onclick="nextQuestion(1)">Next</button></div>
+</div>
+
+<div id="question2" class="question-section">
+    <h2>Scenario 2: Sole User</h2>
+    <p>6 months later:</p>
+    <p>Bad news! She died in a freak boating accident. Now you have no neighbor and that unit is totally empty. Her son, Marcus Pontmercy (who is also the new owner of the property, having inherited it from her), finds out about your spare key when he visits to check on things. He understands your arrangement with her, but explains as follows:</p>
+    <p>“The price you were previously paying was the price to share the bathroom with my mother. Now, you’re the sole user of the bathroom. I’ll shortly be converting the unit into an indoor pickleball court/lounge for my use whenever I’m downtown, so you’ll see plenty of me, but I won’t need to use that restroom at all. Let’s agree on a new price for this situation.</p>
+
+    <label for="answer2">Q2: How much MORE than the previous price are you willing to pay him per month to have exclusive access to the bathroom? (Understanding that Marcus will still visit the unit most days each week at odd hours of the day and evening)</label>
+    <input type="number" id="answer2" name="answer2">
+    <div class = "next-button-container"><button onclick="nextQuestion(2)">Next</button></div>
+</div>
+
+<div id="question3" class="question-section">
+    <h2>Scenario 3: The Swap</h2>
+    <p>6 minutes later:</p>
+    <p>“Actually I changed my mind. That sounds like a hassle. Instead, why don’t we just swap condos? I’ll pay for movers to move everything you own into my mothers old condo, and vice versa. They’re nearly identical, the only difference is that she’s got the bathroom. This way, I won’t have to see you (and you won’t have to see me) when you’re going to relieve yourself or shower while I’m playing pickleball or entertaining guests. It’s going to cost you, though. You’ll keep legal ownership of Pappy’s Condo, I’ll keep legal ownership of my mother’s, and you’ll pay me a bit of money each month to justify our ongoing swap in who-stays-where.</p>
+    <label for="answer3">Q3: How much MORE than the previous price (Q2) are you willing to pay to swap where you live with Marcus on an ongoing basis, so that you live in Dorothy’s old unit and have the bathroom totally and completely private?</label>
+    <input type="number" id="answer3" name="answer3">
+    <div class = "next-button-container"><button onclick="nextQuestion(3)">Next</button></div>
+</div>
+
+<div id="question4" class="question-section">
+    <h2>Scenario 4: The Small Room</h2>
+    <p>Imagine y’all four move into that house together and all the private rooms don’t exist. You sleep in bunk beds in the dining room. The landlord comes along and says he’s building a small 6 foot by 4 foot room with air conditioning and a window - how much do you offer to pay him per month to sleep in this closet instead of in the shared common area bunk bed thing?</p>
+    <label for="answer4">Q4: How much do you offer to pay him per month?</label>
+    <input type="number" id="answer4" name="answer4">
+    <div class = "next-button-container"><button onclick="nextQuestion(4)">Next</button></div>
+</div>
+
+<div id="question5" class="question-section">
+    <h2>Scenario 5: The Larger Room</h2>
+     <p>He hears your offer and says wow i like money, I want more actually. He offers to make the room 6 times as big: 12ft by 12ft. How much extra money would you pay for that?</p>
+    <label for="answer5">Q5: How much extra would you pay?</label>
+    <input type="number" id="answer5" name="answer5">
+    <div class = "next-button-container"><button onclick="nextQuestion(5)">Next</button></div>
+</div>
+
+<div id="question6" class="question-section">
+    <h2>Private vs Public Modifier</h2>
+    <p>Input your modifier for how much more valuable private square footage is when compared to public square footage.</p>
+    <label for = "privMod"> Private Modifier</label>
+    <input type = "number" id = "privMod" name = "privMod">
+    <div class = "next-button-container"><button onclick="showFinalPage()">Show Final Page</button></div>
+</div>
+
+<div id="final-page">
+    <h2>Final Calculations</h2>
+    <p>Here's the formula and results based on your answers:</p>
+    <div id="formula-display"></div>
+    <div id="room-breakdown"></div>
+</div>
+
+<script>
+    let answers = {};
+
+    // Load answers from localStorage (same as before)
+    if (localStorage.getItem('condoAnswers')) {
+        answers = JSON.parse(localStorage.getItem('condoAnswers'));
+        for (let i = 1; i <= 5; i++) {
+            if (answers[`answer${i}`]) {
+                document.getElementById(`answer${i}`).value = answers[`answer${i}`];
+            }
+        }
+        //Now prefilling the private mod value as well
+        if (answers.privMod) {
+                document.getElementById('privMod').value = answers.privMod;
+        }
+    }
+
+    function saveAnswer(questionNumber) {
+      let inputElement;
+      let value;
+      if(questionNumber == 6){
+        inputElement = document.getElementById('privMod');
+        value = parseFloat(inputElement.value);
+      }
+      else{
+        inputElement = document.getElementById(`answer${questionNumber}`);
+        value = parseFloat(inputElement.value);
+      }
+
+
+        if (!isNaN(value)) {
+          if(questionNumber == 6){
+            answers[`privMod`] = value
+          }
+          else{
+            answers[`answer${questionNumber}`] = value;
+          }
+            localStorage.setItem('condoAnswers', JSON.stringify(answers));
+        } else {
+            alert("Please enter a valid number.");
+        }
+    }
+
+    function nextQuestion(currentQuestion) {
+        saveAnswer(currentQuestion);
+        document.getElementById(`question${currentQuestion}`).classList.remove('active');
+        document.getElementById(`question${currentQuestion + 1}`).classList.add('active');
+    }
+
+    function showFinalPage() {
+        saveAnswer(6); // Save private mod answer
+        for (let i = 1; i <= 6; i++) {
+            document.getElementById(`question${i}`).classList.remove('active');
+        }
+        document.getElementById('final-page').style.display = 'block';
+        displayCalculations();
+    }
+
+
+
+    // --- Calculation Functions ---
+
+    function calculateRoomAreas() {
+        return {
+            eve: { private: 12 * 15, bathroom: 'private' },
+            sophie: { private: 13 * 14, bathroom: 'detached' },
+            hannah: { private: 11 * 17, bathroom: 'shared' },
+            emgee: { private: 15 * 10, bathroom: 'shared' },
+            public: { private: 0, bathroom: null}, //This is important
+
+            empty: 11 * 10,
+            living: 14 * 16,
+            dining: 8 * 12,
+        };
+    }
+
+    function calculateTotalPublicArea(roomAreas) {
+      //add up all of the public areas
+        return roomAreas.empty + roomAreas.living + roomAreas.dining;
+    }
+
+    function calculateBathroomValues(answers) {
+        const sharedBathroom = answers.answer1 || 0;
+        const exclusiveBathroom = sharedBathroom + (answers.answer2 || 0); //Remember that answer 2 is asking for how much *more*
+        const privateBathroom = exclusiveBathroom + (answers.answer3 || 0);
+        return { sharedBathroom, exclusiveBathroom, privateBathroom };
+    }
+
+    function calculateIndividualCosts(roomAreas, totalPublicArea, bathroomValues, answers, totalRent) {
+        const privMod = answers.privMod || 2; // Default to 2 if not provided
+        const publicAreaCostPerSqFt = totalRent / (totalPublicArea + (privMod * (roomAreas.eve.private + roomAreas.sophie.private + roomAreas.hannah.private + roomAreas.emgee.private)));
+        const privateAreaCostPerSqFt = publicAreaCostPerSqFt * privMod;
+
+        const individualCosts = {};
+
+        for (const person in roomAreas) {
+          if(person != 'empty' && person != 'living' && person != 'dining' && person != 'public'){ //This is important. We don't want to calculate costs for the non-people rooms
+            let personCost = 0;
+            personCost += roomAreas[person].private * privateAreaCostPerSqFt; // Add private sqft cost
+            personCost += (totalPublicArea / 4) * publicAreaCostPerSqFt //add public sqft cost (divided by the four people)
+
+            // Add bathroom costs
+            if (roomAreas[person].bathroom === 'private') {
+                personCost += bathroomValues.privateBathroom;
+            } else if (roomAreas[person].bathroom === 'detached') {
+                personCost += bathroomValues.exclusiveBathroom;
+            } else if (roomAreas[person].bathroom === 'shared') {
+                personCost += bathroomValues.sharedBathroom / 2; // Shared bathroom cost split
+            }
+            individualCosts[person] = personCost;
+          }
+        }
+
+        return individualCosts;
+    }
+
+
+    function displayCalculations() {
+        const formulaDisplay = document.getElementById('formula-display');
+        const roomBreakdown = document.getElementById('room-breakdown');
+
+        const roomAreas = calculateRoomAreas();
+        const totalPublicArea = calculateTotalPublicArea(roomAreas);
+        const bathroomValues = calculateBathroomValues(answers);
+        const individualCosts = calculateIndividualCosts(roomAreas, totalPublicArea, bathroomValues, answers, 5095);
+        const privMod = answers.privMod
+
+        // --- Formula Display ---
+      let formulaHTML = `
+  Public Area Calculation = Empty Room Sq. Ft. + Living Room Sq. Ft. + Dining Room Sq. Ft.
+  Total Public Area = ${roomAreas.empty} + ${roomAreas.living} + ${roomAreas.dining} = ${totalPublicArea} sq ft
+
+  Bathroom Values:
+  Shared Bathroom Value (Q1):  $${bathroomValues.sharedBathroom.toFixed(2)}
+  Exclusive Bathroom Value (Q1 + Q2):  $${bathroomValues.sharedBathroom.toFixed(2)} + $${answers.answer2} = $${bathroomValues.exclusiveBathroom.toFixed(2)}
+  Private Bathroom Value (Q1 + Q2 + Q3):  $${bathroomValues.sharedBathroom.toFixed(2)} + $${answers.answer2} + $${answers.answer3} = $${bathroomValues.privateBathroom.toFixed(2)}
+
+  Private Area Modifier (User-Provided): ${privMod}
+
+  Cost Per Sq Ft Calculations:
+
+    Total Combined Area = Total Public Area + (Private Modifier * Total Private Area of Occupied Rooms)
+    Total Combined Area = <span class="math-inline">\{totalPublicArea\} \+ \(</span>{privMod} * (${roomAreas.eve.private} + ${roomAreas.sophie.private} + ${roomAreas.hannah.private} + ${roomAreas.emgee.private}))
+
+    Cost Per Sq Ft of Public Area  =  Total Rent / Total Combined Area
+    Cost Per Sq Ft of Public Area = $5095 / <span class="math-inline">\{totalPublicArea\} \+ \(</span>{privMod} * (${roomAreas.eve.private} + ${roomAreas.sophie.private} + ${roomAreas.hannah.private} + ${roomAreas.emgee.private})) = $${(5095/(totalPublicArea + (privMod * (roomAreas.eve.private + roomAreas.sophie.private + roomAreas.hannah.private + roomAreas.emgee.private)))).toFixed(2)}
+
+  Cost Per Sq Ft of Private Area = Cost Per Sq Ft of Public Area * Private Modifier
+  Cost Per Sq Ft of Private Area = ${(5095/(totalPublicArea + (privMod * (roomAreas.eve.private + roomAreas.sophie.private + roomAreas.hannah.private + roomAreas.emgee.private)))).toFixed
