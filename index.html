@@ -6,11 +6,17 @@
     <title>Adam Altmejd</title>
     <style>
         body {
-            background-color: #202020;
+            background: linear-gradient(-45deg, #16102a, #252525, #16102a, #252525, #16102a);
+            background-size: 300% 300%;
+            animation: gradientShift 30s linear infinite;
             color: #f0f0f0;
             font-size: 1.2em;
             line-height: 1.62;
             font-family: sans-serif;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
         .container {
             margin: 0 auto;
@@ -55,7 +61,18 @@
         h1 {
     font-size: 2em;
     color: #f0f0f0;
-    }
+        }
+        #footer-message {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            font-size: 0.75em;
+            opacity: 0.7;
+        }
+        #footer-message a {
+            color: #00FFFF;
+            text-decoration: none;
+        }
 
     </style>
 </head>
@@ -90,7 +107,7 @@
 
 I'm a recent graduate of the "Humanities Honors" program at the University of Texas, having written my thesis on Freedom of Information. I also studied Programming and Computation through University of Texas's Department of Computer Science.
 
-I like working on interesting projects and learning new things - If you want to chat, you can contact me any time at <a href="mailto:adam@altmejd.org" style="color: #00FFFF;">adam@altmejd.org</a></p>
+I love working with interesting people and on projects with meaningful impact - If you want to chat, you can contact me any time at <a href="mailto:adam@altmejd.org" style="color: #00FFFF;">adam@altmejd.org</a></p>
                 
        <!--<div style="margin-top: 50px;"> 
        <h1>Projects</h1> 
@@ -99,4 +116,7 @@ I like working on interesting projects and learning new things - If you want to 
        <p>While optimizing organizational money management for one of my student leadership roles, I developed a tool in python to compare expected profits from the use of different credit cards. I've recently begun porting the tool to the web as <a href="https://altmejd.org/Projects/ChurnBuddyWeb.html" style="color: #00FFFF;">ChurnBuddy</a>. If you use it, let me know what you think!</p>
        <br>-->
       </div>
+     </div>
+     <div id="footer-message">
+        <p>this web-page (barring my face) is proudly <a href="https://endtimes.dev/why-your-website-should-be-under-14kb-in-size/">under 14kb</a></p>
      </div>
